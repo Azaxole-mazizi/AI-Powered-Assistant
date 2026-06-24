@@ -14,7 +14,296 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      emails: {
+        Row: {
+          body: string | null
+          created_at: string
+          cta: string | null
+          id: string
+          improvements: string | null
+          prompt: string
+          recipient_type: string
+          subject: string | null
+          tone: string
+          user_id: string
+        }
+        Insert: {
+          body?: string | null
+          created_at?: string
+          cta?: string | null
+          id?: string
+          improvements?: string | null
+          prompt: string
+          recipient_type: string
+          subject?: string | null
+          tone: string
+          user_id: string
+        }
+        Update: {
+          body?: string | null
+          created_at?: string
+          cta?: string | null
+          id?: string
+          improvements?: string | null
+          prompt?: string
+          recipient_type?: string
+          subject?: string | null
+          tone?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      meetings: {
+        Row: {
+          created_at: string
+          efficiency_score: number | null
+          id: string
+          raw_notes: string
+          summary: Json | null
+          title: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          efficiency_score?: number | null
+          id?: string
+          raw_notes: string
+          summary?: Json | null
+          title: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          efficiency_score?: number | null
+          id?: string
+          raw_notes?: string
+          summary?: Json | null
+          title?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      messages: {
+        Row: {
+          client_id: string | null
+          created_at: string
+          id: string
+          parts: Json
+          role: string
+          thread_id: string
+          user_id: string
+        }
+        Insert: {
+          client_id?: string | null
+          created_at?: string
+          id?: string
+          parts: Json
+          role: string
+          thread_id: string
+          user_id: string
+        }
+        Update: {
+          client_id?: string | null
+          created_at?: string
+          id?: string
+          parts?: Json
+          role?: string
+          thread_id?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "messages_thread_id_fkey"
+            columns: ["thread_id"]
+            isOneToOne: false
+            referencedRelation: "threads"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      productivity_logs: {
+        Row: {
+          burnout_risk: Database["public"]["Enums"]["burnout_risk"] | null
+          created_at: string
+          emails_generated: number | null
+          hours_saved: number | null
+          id: string
+          insights: Json | null
+          log_date: string
+          meetings_count: number | null
+          productivity_score: number | null
+          research_count: number | null
+          tasks_completed: number | null
+          user_id: string
+        }
+        Insert: {
+          burnout_risk?: Database["public"]["Enums"]["burnout_risk"] | null
+          created_at?: string
+          emails_generated?: number | null
+          hours_saved?: number | null
+          id?: string
+          insights?: Json | null
+          log_date?: string
+          meetings_count?: number | null
+          productivity_score?: number | null
+          research_count?: number | null
+          tasks_completed?: number | null
+          user_id: string
+        }
+        Update: {
+          burnout_risk?: Database["public"]["Enums"]["burnout_risk"] | null
+          created_at?: string
+          emails_generated?: number | null
+          hours_saved?: number | null
+          id?: string
+          insights?: Json | null
+          log_date?: string
+          meetings_count?: number | null
+          productivity_score?: number | null
+          research_count?: number | null
+          tasks_completed?: number | null
+          user_id?: string
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          color_theme: string | null
+          created_at: string
+          full_name: string | null
+          id: string
+          language: string | null
+          notifications_enabled: boolean | null
+          productivity_goal: string | null
+          theme: string | null
+          timezone: string | null
+          updated_at: string
+          work_hours_end: string | null
+          work_hours_start: string | null
+        }
+        Insert: {
+          color_theme?: string | null
+          created_at?: string
+          full_name?: string | null
+          id: string
+          language?: string | null
+          notifications_enabled?: boolean | null
+          productivity_goal?: string | null
+          theme?: string | null
+          timezone?: string | null
+          updated_at?: string
+          work_hours_end?: string | null
+          work_hours_start?: string | null
+        }
+        Update: {
+          color_theme?: string | null
+          created_at?: string
+          full_name?: string | null
+          id?: string
+          language?: string | null
+          notifications_enabled?: boolean | null
+          productivity_goal?: string | null
+          theme?: string | null
+          timezone?: string | null
+          updated_at?: string
+          work_hours_end?: string | null
+          work_hours_start?: string | null
+        }
+        Relationships: []
+      }
+      research_items: {
+        Row: {
+          created_at: string
+          id: string
+          input_text: string
+          result: Json | null
+          topic: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          input_text: string
+          result?: Json | null
+          topic: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          input_text?: string
+          result?: Json | null
+          topic?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      tasks: {
+        Row: {
+          created_at: string
+          description: string | null
+          due_date: string | null
+          estimated_minutes: number | null
+          id: string
+          priority: Database["public"]["Enums"]["task_priority"]
+          scheduled_for: string | null
+          status: Database["public"]["Enums"]["task_status"]
+          title: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          description?: string | null
+          due_date?: string | null
+          estimated_minutes?: number | null
+          id?: string
+          priority?: Database["public"]["Enums"]["task_priority"]
+          scheduled_for?: string | null
+          status?: Database["public"]["Enums"]["task_status"]
+          title: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          description?: string | null
+          due_date?: string | null
+          estimated_minutes?: number | null
+          id?: string
+          priority?: Database["public"]["Enums"]["task_priority"]
+          scheduled_for?: string | null
+          status?: Database["public"]["Enums"]["task_status"]
+          title?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      threads: {
+        Row: {
+          created_at: string
+          id: string
+          title: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          title?: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          title?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
@@ -23,7 +312,9 @@ export type Database = {
       [_ in never]: never
     }
     Enums: {
-      [_ in never]: never
+      burnout_risk: "low" | "medium" | "high"
+      task_priority: "critical" | "high" | "medium" | "low"
+      task_status: "todo" | "in_progress" | "done"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -150,6 +441,10 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      burnout_risk: ["low", "medium", "high"],
+      task_priority: ["critical", "high", "medium", "low"],
+      task_status: ["todo", "in_progress", "done"],
+    },
   },
 } as const
