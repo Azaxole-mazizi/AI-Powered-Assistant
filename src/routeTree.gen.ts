@@ -14,6 +14,7 @@ import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ApiChatRouteImport } from './routes/api.chat'
 import { Route as AuthenticatedTasksRouteImport } from './routes/_authenticated/tasks'
+import { Route as AuthenticatedSettingsRouteImport } from './routes/_authenticated/settings'
 import { Route as AuthenticatedResearchRouteImport } from './routes/_authenticated/research'
 import { Route as AuthenticatedReportsRouteImport } from './routes/_authenticated/reports'
 import { Route as AuthenticatedMeetingsRouteImport } from './routes/_authenticated/meetings'
@@ -46,6 +47,11 @@ const ApiChatRoute = ApiChatRouteImport.update({
 const AuthenticatedTasksRoute = AuthenticatedTasksRouteImport.update({
   id: '/tasks',
   path: '/tasks',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
+const AuthenticatedSettingsRoute = AuthenticatedSettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
   getParentRoute: () => AuthenticatedRouteRoute,
 } as any)
 const AuthenticatedResearchRoute = AuthenticatedResearchRouteImport.update({
@@ -105,6 +111,7 @@ export interface FileRoutesByFullPath {
   '/meetings': typeof AuthenticatedMeetingsRoute
   '/reports': typeof AuthenticatedReportsRoute
   '/research': typeof AuthenticatedResearchRoute
+  '/settings': typeof AuthenticatedSettingsRoute
   '/tasks': typeof AuthenticatedTasksRoute
   '/api/chat': typeof ApiChatRoute
   '/chat/$threadId': typeof AuthenticatedChatThreadIdRoute
@@ -119,6 +126,7 @@ export interface FileRoutesByTo {
   '/meetings': typeof AuthenticatedMeetingsRoute
   '/reports': typeof AuthenticatedReportsRoute
   '/research': typeof AuthenticatedResearchRoute
+  '/settings': typeof AuthenticatedSettingsRoute
   '/tasks': typeof AuthenticatedTasksRoute
   '/api/chat': typeof ApiChatRoute
   '/chat/$threadId': typeof AuthenticatedChatThreadIdRoute
@@ -136,6 +144,7 @@ export interface FileRoutesById {
   '/_authenticated/meetings': typeof AuthenticatedMeetingsRoute
   '/_authenticated/reports': typeof AuthenticatedReportsRoute
   '/_authenticated/research': typeof AuthenticatedResearchRoute
+  '/_authenticated/settings': typeof AuthenticatedSettingsRoute
   '/_authenticated/tasks': typeof AuthenticatedTasksRoute
   '/api/chat': typeof ApiChatRoute
   '/_authenticated/chat/$threadId': typeof AuthenticatedChatThreadIdRoute
@@ -153,6 +162,7 @@ export interface FileRouteTypes {
     | '/meetings'
     | '/reports'
     | '/research'
+    | '/settings'
     | '/tasks'
     | '/api/chat'
     | '/chat/$threadId'
@@ -167,6 +177,7 @@ export interface FileRouteTypes {
     | '/meetings'
     | '/reports'
     | '/research'
+    | '/settings'
     | '/tasks'
     | '/api/chat'
     | '/chat/$threadId'
@@ -183,6 +194,7 @@ export interface FileRouteTypes {
     | '/_authenticated/meetings'
     | '/_authenticated/reports'
     | '/_authenticated/research'
+    | '/_authenticated/settings'
     | '/_authenticated/tasks'
     | '/api/chat'
     | '/_authenticated/chat/$threadId'
@@ -231,6 +243,13 @@ declare module '@tanstack/react-router' {
       path: '/tasks'
       fullPath: '/tasks'
       preLoaderRoute: typeof AuthenticatedTasksRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
+    '/_authenticated/settings': {
+      id: '/_authenticated/settings'
+      path: '/settings'
+      fullPath: '/settings'
+      preLoaderRoute: typeof AuthenticatedSettingsRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
     '/_authenticated/research': {
@@ -320,6 +339,7 @@ interface AuthenticatedRouteRouteChildren {
   AuthenticatedMeetingsRoute: typeof AuthenticatedMeetingsRoute
   AuthenticatedReportsRoute: typeof AuthenticatedReportsRoute
   AuthenticatedResearchRoute: typeof AuthenticatedResearchRoute
+  AuthenticatedSettingsRoute: typeof AuthenticatedSettingsRoute
   AuthenticatedTasksRoute: typeof AuthenticatedTasksRoute
 }
 
@@ -331,6 +351,7 @@ const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
   AuthenticatedMeetingsRoute: AuthenticatedMeetingsRoute,
   AuthenticatedReportsRoute: AuthenticatedReportsRoute,
   AuthenticatedResearchRoute: AuthenticatedResearchRoute,
+  AuthenticatedSettingsRoute: AuthenticatedSettingsRoute,
   AuthenticatedTasksRoute: AuthenticatedTasksRoute,
 }
 
