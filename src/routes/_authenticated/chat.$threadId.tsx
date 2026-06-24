@@ -39,9 +39,11 @@ function ChatInner({ threadId, initial }: { threadId: string; initial: UIMessage
     body: { threadId },
     prepareSendMessagesRequest: async ({ messages, body }) => {
       const { data } = await supabase.auth.getSession();
+      const headers: Record<string, string> = {};
+      if (data.session?.access_token) headers.Authorization = `Bearer ${data.session.access_token}`;
       return {
         body: { messages, threadId, ...(body ?? {}) },
-        headers: data.session?.access_token ? { Authorization: `Bearer ${data.session.access_token}` } : {},
+        headers,
       };
     },
   });
