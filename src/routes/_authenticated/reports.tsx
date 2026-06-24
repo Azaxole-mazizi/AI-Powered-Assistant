@@ -26,7 +26,7 @@ function ReportsPage() {
 
   return (
     <div className="mx-auto max-w-7xl p-6 md:p-10">
-      <PageHeader title="Productivity Reports" description="Weekly and monthly performance trends." />
+      <PageHeader title={t("pages.reports.title")} description={t("pages.reports.desc")} />
 
       {chart.length === 0 ? (
         <Card className="mt-6"><CardContent className="p-12 text-center text-sm text-muted-foreground">No reports yet — generate insights from the Dashboard.</CardContent></Card>

@@ -4,6 +4,7 @@ import { useServerFn } from "@tanstack/react-start";
 import { createTask, deleteTask, listTasks, updateTask } from "@/lib/data.functions";
 import { planTasks } from "@/lib/ai.functions";
 import { PageHeader } from "@/components/page-header";
+import { useTranslation } from "react-i18next";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";

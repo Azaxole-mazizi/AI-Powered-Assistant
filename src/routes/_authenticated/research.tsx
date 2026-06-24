@@ -47,7 +47,7 @@ function ResearchPage() {
 
   return (
     <div className="mx-auto max-w-6xl p-6 md:p-10">
-      <PageHeader title="Research Assistant" description="Summarise documents, articles or business topics." />
+      <PageHeader title={t("pages.research.title")} description={t("pages.research.desc")} />
       <Card className="mt-6">
         <CardHeader><CardTitle className="text-base">Analyze content</CardTitle></CardHeader>
         <CardContent className="space-y-3">

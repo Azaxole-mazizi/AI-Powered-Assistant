@@ -29,7 +29,7 @@ function HistoryPage() {
 
   return (
     <div className="mx-auto max-w-6xl p-6 md:p-10">
-      <PageHeader title="History" description="Every conversation, draft, and analysis in one place." />
+      <PageHeader title={t("pages.history.title")} description={t("pages.history.desc")} />
       <Input className="mt-6 max-w-md" placeholder="Search history…" value={q} onChange={(e) => setQ(e.target.value)} />
       <Tabs defaultValue="chats" className="mt-6">
         <TabsList>

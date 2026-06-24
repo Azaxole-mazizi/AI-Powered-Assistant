@@ -48,7 +48,7 @@ function EmailPage() {
 
   return (
     <div className="mx-auto max-w-6xl p-6 md:p-10">
-      <PageHeader title="Email Generator" description="Draft polished emails for any recipient and tone." />
+      <PageHeader title={t("pages.email.title")} description={t("pages.email.desc")} />
 
       <Card className="mt-6">
         <CardHeader><CardTitle className="text-base">New email</CardTitle></CardHeader>

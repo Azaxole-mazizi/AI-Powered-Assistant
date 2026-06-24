@@ -37,7 +37,7 @@ function MeetingsPage() {
 
   return (
     <div className="mx-auto max-w-6xl p-6 md:p-10">
-      <PageHeader title="Meeting Intelligence" description="Turn raw notes into action items, decisions, and an efficiency score." />
+      <PageHeader title={t("pages.meetings.title")} description={t("pages.meetings.desc")} />
 
       <Card className="mt-6">
         <CardHeader><CardTitle className="text-base">Analyze a meeting</CardTitle></CardHeader>
