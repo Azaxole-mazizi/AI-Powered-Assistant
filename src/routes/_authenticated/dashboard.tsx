@@ -4,6 +4,7 @@ import { useServerFn } from "@tanstack/react-start";
 import { generateProductivityInsights } from "@/lib/ai.functions";
 import { listTasks, listMeetings, listEmails, listResearch, listProductivityLogs } from "@/lib/data.functions";
 import { PageHeader } from "@/components/page-header";
+import { useTranslation } from "react-i18next";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";

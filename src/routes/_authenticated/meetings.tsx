@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useTranslation } from "react-i18next";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { useServerFn } from "@tanstack/react-start";
 import { analyzeMeeting } from "@/lib/ai.functions";
@@ -20,6 +21,7 @@ export const Route = createFileRoute("/_authenticated/meetings")({
 });
 
 function MeetingsPage() {
+  const { t } = useTranslation();
   const qc = useQueryClient();
   const listFn = useServerFn(listMeetings);
   const analyzeFn = useServerFn(analyzeMeeting);
@@ -37,7 +39,7 @@ function MeetingsPage() {
 
   return (
     <div className="mx-auto max-w-6xl p-6 md:p-10">
-      <PageHeader title="Meeting Intelligence" description="Turn raw notes into action items, decisions, and an efficiency score." />
+      <PageHeader title={t("pages.meetings.title")} description={t("pages.meetings.desc")} />
 
       <Card className="mt-6">
         <CardHeader><CardTitle className="text-base">Analyze a meeting</CardTitle></CardHeader>

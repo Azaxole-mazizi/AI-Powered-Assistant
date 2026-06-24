@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useTranslation } from "react-i18next";
 import { useQuery } from "@tanstack/react-query";
 import { useServerFn } from "@tanstack/react-start";
 import { listEmails, listMeetings, listResearch, listThreads } from "@/lib/data.functions";
@@ -15,6 +16,7 @@ export const Route = createFileRoute("/_authenticated/history")({
 });
 
 function HistoryPage() {
+  const { t } = useTranslation();
   const [q, setQ] = useState("");
   const tFn = useServerFn(listThreads);
   const eFn = useServerFn(listEmails);
@@ -29,7 +31,7 @@ function HistoryPage() {
 
   return (
     <div className="mx-auto max-w-6xl p-6 md:p-10">
-      <PageHeader title="History" description="Every conversation, draft, and analysis in one place." />
+      <PageHeader title={t("pages.history.title")} description={t("pages.history.desc")} />
       <Input className="mt-6 max-w-md" placeholder="Search history…" value={q} onChange={(e) => setQ(e.target.value)} />
       <Tabs defaultValue="chats" className="mt-6">
         <TabsList>

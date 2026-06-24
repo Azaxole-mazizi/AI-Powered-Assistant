@@ -4,15 +4,20 @@ import { createLovableAiGatewayProvider } from "@/lib/ai-gateway.server";
 import { createClient } from "@supabase/supabase-js";
 import type { Database } from "@/integrations/supabase/types";
 
-const SYSTEM_PROMPT = `You are ConnectSmart AI, a warm, sharp workplace productivity coach inside a SaaS app. You help with task planning, meeting prep, email drafting, research synthesis, and burnout prevention.
+const LANGUAGE_NAMES: Record<string, string> = {
+  en: "English", af: "Afrikaans", zu: "isiZulu", xh: "isiXhosa",
+  fr: "French", es: "Spanish", pt: "Portuguese", de: "German",
+  ar: "Arabic", zh: "Chinese", ja: "Japanese",
+};
+
+const BASE_PROMPT = `You are ConnectSmart AI, a warm, sharp workplace productivity coach inside a SaaS app. You help with task planning, meeting prep, email drafting, research synthesis, and burnout prevention.
 
 Rules:
 - Be concise and practical. Use short paragraphs and bullet points.
 - Never fabricate facts. If unsure, say so and suggest how to verify.
 - Acknowledge confidence levels when relevant.
 - End substantive answers with a short "Next actions" list when appropriate.
-- Remind users (when relevant) to review AI outputs before business decisions.
-- Respond in the user's language if they switch.`;
+- Remind users (when relevant) to review AI outputs before business decisions.`;
 
 export const Route = createFileRoute("/api/chat")({
   server: {
@@ -39,6 +44,12 @@ export const Route = createFileRoute("/api/chat")({
 
         const { data: thread } = await supabase.from("threads").select("id,title").eq("id", threadId).maybeSingle();
         if (!thread) return new Response("Thread not found", { status: 404 });
+
+        // Read the user's preferred language so the model always responds in it.
+        const { data: profile } = await supabase.from("profiles").select("language").eq("id", userId).maybeSingle();
+        const langCode = (profile?.language as string | null) || "en";
+        const langName = LANGUAGE_NAMES[langCode] ?? "English";
+        const SYSTEM_PROMPT = `${BASE_PROMPT}\n- Always respond in ${langName} (${langCode}). Never switch languages unless the user explicitly asks.`;
 
         const lastUser = [...messages].reverse().find((m) => m.role === "user");
         if (lastUser) {

@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useTranslation } from "react-i18next";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { useServerFn } from "@tanstack/react-start";
 import { runResearch } from "@/lib/ai.functions";
@@ -30,6 +31,7 @@ function Section({ title, items }: { title: string; items?: string[] }) {
 }
 
 function ResearchPage() {
+  const { t } = useTranslation();
   const qc = useQueryClient();
   const listFn = useServerFn(listResearch);
   const runFn = useServerFn(runResearch);
@@ -47,7 +49,7 @@ function ResearchPage() {
 
   return (
     <div className="mx-auto max-w-6xl p-6 md:p-10">
-      <PageHeader title="Research Assistant" description="Summarise documents, articles or business topics." />
+      <PageHeader title={t("pages.research.title")} description={t("pages.research.desc")} />
       <Card className="mt-6">
         <CardHeader><CardTitle className="text-base">Analyze content</CardTitle></CardHeader>
         <CardContent className="space-y-3">
