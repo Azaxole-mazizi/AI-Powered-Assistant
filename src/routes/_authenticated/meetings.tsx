@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useTranslation } from "react-i18next";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { useServerFn } from "@tanstack/react-start";
 import { analyzeMeeting } from "@/lib/ai.functions";
@@ -20,6 +21,7 @@ export const Route = createFileRoute("/_authenticated/meetings")({
 });
 
 function MeetingsPage() {
+  const { t } = useTranslation();
   const qc = useQueryClient();
   const listFn = useServerFn(listMeetings);
   const analyzeFn = useServerFn(analyzeMeeting);

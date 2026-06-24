@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useTranslation } from "react-i18next";
 import { useQuery } from "@tanstack/react-query";
 import { useServerFn } from "@tanstack/react-start";
 import { listEmails, listMeetings, listResearch, listThreads } from "@/lib/data.functions";
@@ -15,6 +16,7 @@ export const Route = createFileRoute("/_authenticated/history")({
 });
 
 function HistoryPage() {
+  const { t } = useTranslation();
   const [q, setQ] = useState("");
   const tFn = useServerFn(listThreads);
   const eFn = useServerFn(listEmails);

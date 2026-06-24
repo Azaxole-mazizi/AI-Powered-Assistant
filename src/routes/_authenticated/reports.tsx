@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useTranslation } from "react-i18next";
 import { useQuery } from "@tanstack/react-query";
 import { useServerFn } from "@tanstack/react-start";
 import { listProductivityLogs } from "@/lib/data.functions";
@@ -13,6 +14,7 @@ export const Route = createFileRoute("/_authenticated/reports")({
 });
 
 function ReportsPage() {
+  const { t } = useTranslation();
   const fn = useServerFn(listProductivityLogs);
   const { data: logs = [] } = useQuery({ queryKey: ["logs"], queryFn: () => fn() });
 

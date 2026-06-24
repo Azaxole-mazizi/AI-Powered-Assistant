@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useTranslation } from "react-i18next";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { useServerFn } from "@tanstack/react-start";
 import { runResearch } from "@/lib/ai.functions";
@@ -30,6 +31,7 @@ function Section({ title, items }: { title: string; items?: string[] }) {
 }
 
 function ResearchPage() {
+  const { t } = useTranslation();
   const qc = useQueryClient();
   const listFn = useServerFn(listResearch);
   const runFn = useServerFn(runResearch);

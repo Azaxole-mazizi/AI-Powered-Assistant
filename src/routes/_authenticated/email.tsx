@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useTranslation } from "react-i18next";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { useServerFn } from "@tanstack/react-start";
 import { generateEmail, optimizePrompt } from "@/lib/ai.functions";
@@ -22,6 +23,7 @@ const RECIPIENTS = ["Client", "Team", "Manager", "Sales outreach", "Customer sup
 const TONES = ["Formal", "Informal", "Friendly", "Persuasive", "Professional", "Executive"];
 
 function EmailPage() {
+  const { t } = useTranslation();
   const qc = useQueryClient();
   const listFn = useServerFn(listEmails);
   const genFn = useServerFn(generateEmail);

@@ -30,6 +30,7 @@ const PRIORITY_COLORS: Record<string, string> = {
 };
 
 function TasksPage() {
+  const { t } = useTranslation();
   const qc = useQueryClient();
   const listFn = useServerFn(listTasks);
   const createFn = useServerFn(createTask);
