@@ -1,0 +1,7 @@
+# ConnectSmart AI
+
+> AI-powered workplace productivity assistant: planning, meeting intelligence, email drafting, research, and burnout prevention.
+
+## Pages
+- [Home](/): Product overview and key features.
+- [Sign in](/auth): Sign in or create an account.
