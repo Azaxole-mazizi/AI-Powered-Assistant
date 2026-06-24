@@ -2,6 +2,22 @@ import { createServerFn } from "@tanstack/react-start";
 import { requireSupabaseAuth } from "@/integrations/supabase/auth-middleware";
 import { z } from "zod";
 
+const LANGUAGE_NAMES: Record<string, string> = {
+  en: "English", af: "Afrikaans", zu: "isiZulu", xh: "isiXhosa",
+  fr: "French", es: "Spanish", pt: "Portuguese", de: "German",
+  ar: "Arabic", zh: "Chinese", ja: "Japanese",
+};
+
+async function userLanguage(supabase: any, userId: string): Promise<string> {
+  const { data } = await supabase.from("profiles").select("language").eq("id", userId).maybeSingle();
+  const code = (data?.language as string | null) || "en";
+  return LANGUAGE_NAMES[code] ?? "English";
+}
+
+function langRule(lang: string): string {
+  return ` Respond in ${lang}. Never switch languages unless explicitly asked. Keep JSON keys in English; translate only string values.`;
+}
+
 async function callGateway(system: string, user: string, jsonMode = false): Promise<string> {
   const key = process.env.LOVABLE_API_KEY;
   if (!key) throw new Error("Missing LOVABLE_API_KEY");
@@ -48,8 +64,9 @@ export const generateEmail = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
   .inputValidator((d: unknown) => EmailInput.parse(d))
   .handler(async ({ data, context }) => {
+    const lang = await userLanguage(context.supabase, context.userId);
     const raw = await callGateway(
-      `You are an expert email writer. Respond in ${data.language}. Output strict JSON with keys: subject, body, cta, improvements. Body should be ready-to-send.`,
+      `You are an expert email writer.${langRule(lang)} Output strict JSON with keys: subject, body, cta, improvements. Body should be ready-to-send.`,
       `Recipient: ${data.recipient_type}\nTone: ${data.tone}\nGoal: ${data.prompt}`,
       true,
     );
@@ -77,8 +94,9 @@ export const analyzeMeeting = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
   .inputValidator((d: unknown) => MeetingInput.parse(d))
   .handler(async ({ data, context }) => {
+    const lang = await userLanguage(context.supabase, context.userId);
     const raw = await callGateway(
-      `You are a meeting analyst. Respond in ${data.language}. Output strict JSON with keys: executive_summary (string), key_points (string[]), decisions (string[]), action_items (array of {task,owner,deadline}), efficiency_score (0-100 integer), efficiency_reason (string), was_necessary (boolean), alternative (string).`,
+      `You are a meeting analyst.${langRule(lang)} Output strict JSON with keys: executive_summary (string), key_points (string[]), decisions (string[]), action_items (array of {task,owner,deadline}), efficiency_score (0-100 integer), efficiency_reason (string), was_necessary (boolean), alternative (string).`,
       `Meeting title: ${data.title}\nNotes:\n${data.notes}`,
       true,
     );
@@ -103,8 +121,9 @@ export const runResearch = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
   .inputValidator((d: unknown) => ResearchInput.parse(d))
   .handler(async ({ data, context }) => {
+    const lang = await userLanguage(context.supabase, context.userId);
     const raw = await callGateway(
-      `You are an analyst. Respond in ${data.language}. Output strict JSON with keys: summary, key_insights (string[]), opportunities (string[]), risks (string[]), recommendations (string[]), executive_briefing (string), confidence ("low"|"medium"|"high").`,
+      `You are an analyst.${langRule(lang)} Output strict JSON with keys: summary, key_insights (string[]), opportunities (string[]), risks (string[]), recommendations (string[]), executive_briefing (string), confidence ("low"|"medium"|"high").`,
       `Topic: ${data.topic}\nContent:\n${data.content}`,
       true,
     );
@@ -123,6 +142,7 @@ export const generateProductivityInsights = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
   .handler(async ({ context }) => {
     const sb = context.supabase;
+    const lang = await userLanguage(sb, context.userId);
     const [{ data: tasks }, { data: meetings }, { data: emails }, { data: research }] = await Promise.all([
       sb.from("tasks").select("priority,status,due_date,estimated_minutes,created_at").order("created_at", { ascending: false }).limit(50),
       sb.from("meetings").select("efficiency_score,created_at").order("created_at", { ascending: false }).limit(20),
@@ -140,7 +160,7 @@ export const generateProductivityInsights = createServerFn({ method: "POST" })
     };
 
     const raw = await callGateway(
-      `You are a workplace productivity coach. Output strict JSON with keys: productivity_score (0-100 integer), burnout_risk ("low"|"medium"|"high"), hours_saved (number, conservative estimate of hours saved this week), insights (string[] of 3-5 concrete observations), recommendations (string[] of 3-5 concrete actions), focus_block_suggestion (string), confidence ("low"|"medium"|"high"). Be specific, kind, and reference the user's actual numbers.`,
+      `You are a workplace productivity coach.${langRule(lang)} Output strict JSON with keys: productivity_score (0-100 integer), burnout_risk ("low"|"medium"|"high"), hours_saved (number, conservative estimate of hours saved this week), insights (string[] of 3-5 concrete observations), recommendations (string[] of 3-5 concrete actions), focus_block_suggestion (string), confidence ("low"|"medium"|"high"). Be specific, kind, and reference the user's actual numbers.`,
       `Activity summary:\n${JSON.stringify(summary, null, 2)}`,
       true,
     );
@@ -171,8 +191,9 @@ export const planTasks = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
   .inputValidator((d: unknown) => PlanInput.parse(d))
   .handler(async ({ data, context }) => {
+    const lang = await userLanguage(context.supabase, context.userId);
     const raw = await callGateway(
-      `You break large goals into actionable tasks using the Eisenhower matrix. Respond in ${data.language}. Output strict JSON: { tasks: [{ title, description, priority ("critical"|"high"|"medium"|"low"), estimated_minutes (int) }] } — 3 to 7 tasks.`,
+      `You break large goals into actionable tasks using the Eisenhower matrix.${langRule(lang)} Output strict JSON: { tasks: [{ title, description, priority ("critical"|"high"|"medium"|"low"), estimated_minutes (int) }] } — 3 to 7 tasks.`,
       data.goal,
       true,
     );
