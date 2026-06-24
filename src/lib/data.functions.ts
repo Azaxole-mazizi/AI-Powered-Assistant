@@ -136,15 +136,15 @@ export const getProfile = createServerFn({ method: "GET" })
 export const updateProfile = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
   .inputValidator((d: unknown) => z.object({
-    full_name: z.string().max(120).optional(),
-    timezone: z.string().max(60).optional(),
-    language: z.string().max(10).optional(),
-    theme: z.enum(["light","dark","system"]).optional(),
-    color_theme: z.string().max(40).optional(),
-    work_hours_start: z.string().max(10).optional(),
-    work_hours_end: z.string().max(10).optional(),
-    productivity_goal: z.string().max(500).optional(),
-    notifications_enabled: z.boolean().optional(),
+    full_name: z.string().max(120).nullable().optional(),
+    timezone: z.string().max(60).nullable().optional(),
+    language: z.string().max(10).nullable().optional(),
+    theme: z.enum(["light","dark","system"]).nullable().optional(),
+    color_theme: z.string().max(40).nullable().optional(),
+    work_hours_start: z.string().max(10).nullable().optional(),
+    work_hours_end: z.string().max(10).nullable().optional(),
+    productivity_goal: z.string().max(500).nullable().optional(),
+    notifications_enabled: z.boolean().nullable().optional(),
   }).parse(d))
   .handler(async ({ data, context }) => {
     await context.supabase.from("profiles").upsert({ id: context.userId, ...data });
