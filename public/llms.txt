@@ -5,4 +5,3 @@
 ## Pages
 - [Home](/): Product overview and key features.
 - [Sign in](/auth): Sign in or create an account.
-*** End Patch
