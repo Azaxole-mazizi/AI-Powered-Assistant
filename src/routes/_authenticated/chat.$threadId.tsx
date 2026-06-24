@@ -11,6 +11,7 @@ import { Send, Sparkles } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import ReactMarkdown from "react-markdown";
 import logo from "@/assets/logo.png";
+import { useTranslation } from "react-i18next";
 
 export const Route = createFileRoute("/_authenticated/chat/$threadId")({
   component: () => {
@@ -30,6 +31,7 @@ function ChatThread({ threadId }: { threadId: string }) {
 }
 
 function ChatInner({ threadId, initial }: { threadId: string; initial: UIMessage[] }) {
+  const { t } = useTranslation();
   const [input, setInput] = useState("");
   const scrollRef = useRef<HTMLDivElement>(null);
   const taRef = useRef<HTMLTextAreaElement>(null);
@@ -77,8 +79,8 @@ function ChatInner({ threadId, initial }: { threadId: string; initial: UIMessage
           {messages.length === 0 && (
             <div className="rounded-2xl border border-border bg-gradient-surface p-8 text-center">
               <img src={logo} alt="" width={48} height={48} className="mx-auto h-12 w-12" />
-              <h2 className="mt-3 font-display text-xl font-semibold">How can I help you today?</h2>
-              <p className="mt-1 text-sm text-muted-foreground">Try: "Plan my Monday around 3 client calls and a launch deadline."</p>
+              <h2 className="mt-3 font-display text-xl font-semibold">{t("chat.emptyTitle")}</h2>
+              <p className="mt-1 text-sm text-muted-foreground">{t("chat.emptyHint")}</p>
             </div>
           )}
           {messages.map((m) => {
@@ -106,7 +108,7 @@ function ChatInner({ threadId, initial }: { threadId: string; initial: UIMessage
           {status === "submitted" && (
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
               <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/15 text-primary"><Sparkles className="h-4 w-4 animate-pulse" /></div>
-              <span className="animate-pulse">Thinking…</span>
+              <span className="animate-pulse">{t("common.thinking")}</span>
             </div>
           )}
           {error && <div className="rounded-lg bg-destructive/10 p-3 text-sm text-destructive">{error.message}</div>}
@@ -119,7 +121,7 @@ function ChatInner({ threadId, initial }: { threadId: string; initial: UIMessage
             value={input}
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={(e) => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); submit(e as any); } }}
-            placeholder="Message ConnectSmart AI…"
+            placeholder={t("chat.placeholder")}
             rows={1}
             className="min-h-[44px] resize-none"
           />
@@ -127,7 +129,7 @@ function ChatInner({ threadId, initial }: { threadId: string; initial: UIMessage
             <Send className="h-4 w-4" />
           </Button>
         </div>
-        <p className="mx-auto mt-2 max-w-3xl text-center text-xs text-muted-foreground">AI outputs should be reviewed before business decisions.</p>
+        <p className="mx-auto mt-2 max-w-3xl text-center text-xs text-muted-foreground">{t("common.reviewDisclaimer")}</p>
       </form>
     </div>
   );
