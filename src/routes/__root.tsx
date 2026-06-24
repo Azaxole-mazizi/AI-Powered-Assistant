@@ -13,6 +13,8 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { supabase } from "@/integrations/supabase/client";
 import { Toaster } from "@/components/ui/sonner";
+import "@/lib/i18n";
+import { LanguageProvider } from "@/components/language-provider";
 import "@fontsource/inter/400.css";
 import "@fontsource/inter/500.css";
 import "@fontsource/inter/600.css";
@@ -135,8 +137,10 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <Outlet />
-      <Toaster richColors closeButton position="top-right" />
+      <LanguageProvider>
+        <Outlet />
+        <Toaster richColors closeButton position="top-right" />
+      </LanguageProvider>
     </QueryClientProvider>
   );
 }
