@@ -74,6 +74,11 @@ function ChatInner({ threadId, initial }: { threadId: string; initial: UIMessage
 
   return (
     <div className="flex h-full flex-col">
+      <div className="border-b border-border bg-background/80 px-6 py-3 backdrop-blur">
+        <div className="mx-auto max-w-3xl">
+          <h1 className="font-display text-lg font-semibold tracking-tight">{t("pages.chat.title")}</h1>
+        </div>
+      </div>
       <div ref={scrollRef} className="flex-1 overflow-y-auto">
         <div className="mx-auto max-w-3xl space-y-6 p-6">
           {messages.length === 0 && (
