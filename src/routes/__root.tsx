@@ -87,10 +87,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "ConnectSmart AI — AI Workplace Productivity Assistant" },
-      { name: "description", content: "AI-powered workplace productivity coach: smart planning, meeting intelligence, email generation, research, and burnout detection." },
-      { property: "og:title", content: "ConnectSmart AI" },
-      { property: "og:description", content: "Your AI-powered workplace productivity assistant." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
