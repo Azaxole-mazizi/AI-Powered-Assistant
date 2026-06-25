@@ -25,6 +25,7 @@ function riskColor(r?: string | null) {
 }
 
 function Dashboard() {
+  const { t } = useTranslation();
   const qc = useQueryClient();
   const tasksFn = useServerFn(listTasks);
   const meetingsFn = useServerFn(listMeetings);
