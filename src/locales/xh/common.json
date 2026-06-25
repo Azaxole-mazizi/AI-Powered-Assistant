@@ -1,5 +1,8 @@
 {
-  "app": { "name": "ConnectSmart AI", "tagline": "Sebenza ngobulumko. Nciphisa ukudinwa." },
+  "app": {
+    "name": "ConnectSmart AI",
+    "tagline": "Sebenza ngobulumko. Nciphisa ukudinwa."
+  },
   "nav": {
     "dashboard": "Ideshibhodi",
     "chat": "Incoko ye-AI",
@@ -69,19 +72,60 @@
     "saved": "Ulukhetho lugciniwe"
   },
   "pages": {
-    "dashboard": { "title": "Ideshibhodi", "desc": "Ukuvelisa kwakho ngokukhawuleza." },
-    "tasks": { "title": "Umceli Wemisebenzi", "desc": "Beka phambili nge-Eisenhower matrix." },
-    "meetings": { "title": "Ubukrelekrele Bentlanganiso", "desc": "Iishwankathelo, izenzo, namanqaku okusebenza." },
-    "email": { "title": "Umveliso we-imeyile", "desc": "Bhala ii-imeyile ezilolongiweyo." },
-    "research": { "title": "Umncedisi Wophando", "desc": "Shwankathela amaxwebhu uveze imingcipheko." },
-    "reports": { "title": "Iingxelo", "desc": "Iindlela zokuvelisa nemingcipheko yokudinwa." },
-    "history": { "title": "Imbali", "desc": "Khangela kuko konke okwenzileyo." },
-    "chat": { "title": "Incoko ye-AI", "desc": "Buza nantoni. Ceba, bhala, gqiba." },
-    "settings": { "title": "Iisetingi", "desc": "Lungisa indawo yakho ye-ConnectSmart AI." }
+    "dashboard": {
+      "title": "Ideshibhodi yokukhiqiza",
+      "desc": "Ukuvelisa kwakho ngokukhawuleza."
+    },
+    "tasks": {
+      "title": "Umceli Wemisebenzi",
+      "desc": "Beka phambili nge-Eisenhower matrix."
+    },
+    "meetings": {
+      "title": "Ubukrelekrele Bentlanganiso",
+      "desc": "Iishwankathelo, izenzo, namanqaku okusebenza."
+    },
+    "email": {
+      "title": "Umveliso we-imeyile",
+      "desc": "Bhala ii-imeyile ezilolongiweyo."
+    },
+    "research": {
+      "title": "Umncedisi Wophando",
+      "desc": "Shwankathela amaxwebhu uveze imingcipheko."
+    },
+    "reports": {
+      "title": "Iingxelo",
+      "desc": "Iindlela zokuvelisa nemingcipheko yokudinwa."
+    },
+    "history": {
+      "title": "Imbali",
+      "desc": "Khangela kuko konke okwenzileyo."
+    },
+    "chat": {
+      "title": "Incoko ye-AI",
+      "desc": "Buza nantoni. Ceba, bhala, gqiba."
+    },
+    "settings": {
+      "title": "Iisetingi",
+      "desc": "Lungisa indawo yakho ye-ConnectSmart AI."
+    }
   },
-  "priority": { "critical": "Engxamisekileyo", "high": "Phezulu", "medium": "Phakathi", "low": "Phantsi" },
-  "status": { "todo": "Mazenziwe", "in_progress": "Iyaqhubeka", "done": "Kugqityiwe" },
-  "burnout": { "label": "Ingozi yokudinwa", "low": "Phantsi", "medium": "Phakathi", "high": "Phezulu" },
+  "priority": {
+    "critical": "Engxamisekileyo",
+    "high": "Phezulu",
+    "medium": "Phakathi",
+    "low": "Phantsi"
+  },
+  "status": {
+    "todo": "Mazenziwe",
+    "in_progress": "Iyaqhubeka",
+    "done": "Kugqityiwe"
+  },
+  "burnout": {
+    "label": "Ingozi yokudinwa",
+    "low": "Phantsi",
+    "medium": "Phakathi",
+    "high": "Phezulu"
+  },
   "chat": {
     "emptyTitle": "Ndingakunceda njani namhlanje?",
     "emptyHint": "Zama: \"Ceba uMvulo wam ngeefowuni ezi-3 zabathengi nomhla wokuqala.\"",

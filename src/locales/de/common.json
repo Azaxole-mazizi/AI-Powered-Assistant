@@ -1,5 +1,8 @@
 {
-  "app": { "name": "ConnectSmart AI", "tagline": "Klüger arbeiten. Weniger Burnout." },
+  "app": {
+    "name": "ConnectSmart AI",
+    "tagline": "Klüger arbeiten. Weniger Burnout."
+  },
   "nav": {
     "dashboard": "Dashboard",
     "chat": "KI-Chat",
@@ -69,19 +72,60 @@
     "saved": "Einstellungen gespeichert"
   },
   "pages": {
-    "dashboard": { "title": "Dashboard", "desc": "Deine Produktivität auf einen Blick." },
-    "tasks": { "title": "Aufgabenplaner", "desc": "Priorisiere mit der Eisenhower-Matrix." },
-    "meetings": { "title": "Meeting-Intelligenz", "desc": "Zusammenfassungen, Aktionen und Effizienzwerte." },
-    "email": { "title": "E-Mail-Generator", "desc": "Verfasse polierte E-Mails für jeden Empfänger." },
-    "research": { "title": "Recherche-Assistent", "desc": "Fasse Dokumente zusammen und zeige Risiken." },
-    "reports": { "title": "Berichte", "desc": "Produktivitätstrends und Burnout-Risiko." },
-    "history": { "title": "Verlauf", "desc": "Durchsuche alles, was du erstellt hast." },
-    "chat": { "title": "KI-Chat", "desc": "Frag alles. Planen, schreiben, entscheiden." },
-    "settings": { "title": "Einstellungen", "desc": "Passe deinen ConnectSmart AI Arbeitsbereich an." }
+    "dashboard": {
+      "title": "Produktivitäts-Dashboard",
+      "desc": "Deine Produktivität auf einen Blick."
+    },
+    "tasks": {
+      "title": "Aufgabenplaner",
+      "desc": "Priorisiere mit der Eisenhower-Matrix."
+    },
+    "meetings": {
+      "title": "Meeting-Intelligenz",
+      "desc": "Zusammenfassungen, Aktionen und Effizienzwerte."
+    },
+    "email": {
+      "title": "E-Mail-Generator",
+      "desc": "Verfasse polierte E-Mails für jeden Empfänger."
+    },
+    "research": {
+      "title": "Recherche-Assistent",
+      "desc": "Fasse Dokumente zusammen und zeige Risiken."
+    },
+    "reports": {
+      "title": "Berichte",
+      "desc": "Produktivitätstrends und Burnout-Risiko."
+    },
+    "history": {
+      "title": "Verlauf",
+      "desc": "Durchsuche alles, was du erstellt hast."
+    },
+    "chat": {
+      "title": "KI-Chat",
+      "desc": "Frag alles. Planen, schreiben, entscheiden."
+    },
+    "settings": {
+      "title": "Einstellungen",
+      "desc": "Passe deinen ConnectSmart AI Arbeitsbereich an."
+    }
   },
-  "priority": { "critical": "Kritisch", "high": "Hoch", "medium": "Mittel", "low": "Niedrig" },
-  "status": { "todo": "Zu erledigen", "in_progress": "In Arbeit", "done": "Erledigt" },
-  "burnout": { "label": "Burnout-Risiko", "low": "Niedrig", "medium": "Mittel", "high": "Hoch" },
+  "priority": {
+    "critical": "Kritisch",
+    "high": "Hoch",
+    "medium": "Mittel",
+    "low": "Niedrig"
+  },
+  "status": {
+    "todo": "Zu erledigen",
+    "in_progress": "In Arbeit",
+    "done": "Erledigt"
+  },
+  "burnout": {
+    "label": "Burnout-Risiko",
+    "low": "Niedrig",
+    "medium": "Mittel",
+    "high": "Hoch"
+  },
   "chat": {
     "emptyTitle": "Wie kann ich heute helfen?",
     "emptyHint": "Versuche: „Plane meinen Montag mit 3 Kundenanrufen und einer Launch-Deadline.“",

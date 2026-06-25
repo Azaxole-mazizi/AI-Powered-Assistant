@@ -1,5 +1,8 @@
 {
-  "app": { "name": "ConnectSmart AI", "tagline": "Work smarter. Burnout less." },
+  "app": {
+    "name": "ConnectSmart AI",
+    "tagline": "Work smarter. Burnout less."
+  },
   "nav": {
     "dashboard": "Dashboard",
     "chat": "AI Chat",
@@ -69,19 +72,60 @@
     "saved": "Preferences saved"
   },
   "pages": {
-    "dashboard": { "title": "Dashboard", "desc": "Your productivity at a glance." },
-    "tasks": { "title": "Task Planner", "desc": "Prioritize with the Eisenhower matrix." },
-    "meetings": { "title": "Meeting Intelligence", "desc": "Summaries, action items, and efficiency scores." },
-    "email": { "title": "Email Generator", "desc": "Draft polished emails for any recipient and tone." },
-    "research": { "title": "Research Assistant", "desc": "Summarize documents and surface risks." },
-    "reports": { "title": "Reports", "desc": "Productivity trends and burnout risk." },
-    "history": { "title": "History", "desc": "Search across everything you've created." },
-    "chat": { "title": "AI Chat", "desc": "Ask anything. Plan, draft, decide." },
-    "settings": { "title": "Settings", "desc": "Customize your ConnectSmart AI workspace." }
+    "dashboard": {
+      "title": "Productivity Dashboard",
+      "desc": "Your productivity at a glance."
+    },
+    "tasks": {
+      "title": "Task Planner",
+      "desc": "Prioritize with the Eisenhower matrix."
+    },
+    "meetings": {
+      "title": "Meeting Intelligence",
+      "desc": "Summaries, action items, and efficiency scores."
+    },
+    "email": {
+      "title": "Email Generator",
+      "desc": "Draft polished emails for any recipient and tone."
+    },
+    "research": {
+      "title": "Research Assistant",
+      "desc": "Summarize documents and surface risks."
+    },
+    "reports": {
+      "title": "Reports",
+      "desc": "Productivity trends and burnout risk."
+    },
+    "history": {
+      "title": "History",
+      "desc": "Search across everything you've created."
+    },
+    "chat": {
+      "title": "AI Chat",
+      "desc": "Ask anything. Plan, draft, decide."
+    },
+    "settings": {
+      "title": "Settings",
+      "desc": "Customize your ConnectSmart AI workspace."
+    }
   },
-  "priority": { "critical": "Critical", "high": "High", "medium": "Medium", "low": "Low" },
-  "status": { "todo": "To do", "in_progress": "In progress", "done": "Done" },
-  "burnout": { "label": "Burnout risk", "low": "Low", "medium": "Medium", "high": "High" },
+  "priority": {
+    "critical": "Critical",
+    "high": "High",
+    "medium": "Medium",
+    "low": "Low"
+  },
+  "status": {
+    "todo": "To do",
+    "in_progress": "In progress",
+    "done": "Done"
+  },
+  "burnout": {
+    "label": "Burnout risk",
+    "low": "Low",
+    "medium": "Medium",
+    "high": "High"
+  },
   "chat": {
     "emptyTitle": "How can I help you today?",
     "emptyHint": "Try: \"Plan my Monday around 3 client calls and a launch deadline.\"",

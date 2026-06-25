@@ -1,5 +1,8 @@
 {
-  "app": { "name": "ConnectSmart AI", "tagline": "更聪明地工作，减少倦怠。" },
+  "app": {
+    "name": "ConnectSmart AI",
+    "tagline": "更聪明地工作，减少倦怠。"
+  },
   "nav": {
     "dashboard": "仪表板",
     "chat": "AI 聊天",
@@ -69,19 +72,60 @@
     "saved": "偏好已保存"
   },
   "pages": {
-    "dashboard": { "title": "仪表板", "desc": "一览您的生产力。" },
-    "tasks": { "title": "任务规划", "desc": "用艾森豪威尔矩阵分清优先级。" },
-    "meetings": { "title": "会议智能", "desc": "摘要、行动项和效率评分。" },
-    "email": { "title": "邮件生成器", "desc": "为任何收件人起草精致邮件。" },
-    "research": { "title": "研究助理", "desc": "总结文档并指出风险。" },
-    "reports": { "title": "报告", "desc": "生产力趋势与倦怠风险。" },
-    "history": { "title": "历史", "desc": "搜索您创建的所有内容。" },
-    "chat": { "title": "AI 聊天", "desc": "随便问。规划、起草、决策。" },
-    "settings": { "title": "设置", "desc": "自定义您的 ConnectSmart AI 工作区。" }
+    "dashboard": {
+      "title": "生产力仪表盘",
+      "desc": "一览您的生产力。"
+    },
+    "tasks": {
+      "title": "任务规划",
+      "desc": "用艾森豪威尔矩阵分清优先级。"
+    },
+    "meetings": {
+      "title": "会议智能",
+      "desc": "摘要、行动项和效率评分。"
+    },
+    "email": {
+      "title": "邮件生成器",
+      "desc": "为任何收件人起草精致邮件。"
+    },
+    "research": {
+      "title": "研究助理",
+      "desc": "总结文档并指出风险。"
+    },
+    "reports": {
+      "title": "报告",
+      "desc": "生产力趋势与倦怠风险。"
+    },
+    "history": {
+      "title": "历史",
+      "desc": "搜索您创建的所有内容。"
+    },
+    "chat": {
+      "title": "AI 聊天",
+      "desc": "随便问。规划、起草、决策。"
+    },
+    "settings": {
+      "title": "设置",
+      "desc": "自定义您的 ConnectSmart AI 工作区。"
+    }
   },
-  "priority": { "critical": "紧急", "high": "高", "medium": "中", "low": "低" },
-  "status": { "todo": "待办", "in_progress": "进行中", "done": "已完成" },
-  "burnout": { "label": "倦怠风险", "low": "低", "medium": "中", "high": "高" },
+  "priority": {
+    "critical": "紧急",
+    "high": "高",
+    "medium": "中",
+    "low": "低"
+  },
+  "status": {
+    "todo": "待办",
+    "in_progress": "进行中",
+    "done": "已完成"
+  },
+  "burnout": {
+    "label": "倦怠风险",
+    "low": "低",
+    "medium": "中",
+    "high": "高"
+  },
   "chat": {
     "emptyTitle": "今天我能为您做什么？",
     "emptyHint": "试试：「围绕 3 个客户电话和发布截止日期规划我的周一。」",

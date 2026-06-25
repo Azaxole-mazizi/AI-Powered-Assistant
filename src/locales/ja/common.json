@@ -1,5 +1,8 @@
 {
-  "app": { "name": "ConnectSmart AI", "tagline": "賢く働く。燃え尽きを減らす。" },
+  "app": {
+    "name": "ConnectSmart AI",
+    "tagline": "賢く働く。燃え尽きを減らす。"
+  },
   "nav": {
     "dashboard": "ダッシュボード",
     "chat": "AI チャット",
@@ -69,19 +72,60 @@
     "saved": "設定を保存しました"
   },
   "pages": {
-    "dashboard": { "title": "ダッシュボード", "desc": "あなたの生産性を一目で。" },
-    "tasks": { "title": "タスクプランナー", "desc": "アイゼンハワー・マトリクスで優先順位付け。" },
-    "meetings": { "title": "ミーティング・インテリジェンス", "desc": "要約、アクション、効率スコア。" },
-    "email": { "title": "メール生成", "desc": "どんな相手にも洗練されたメールを。" },
-    "research": { "title": "リサーチ・アシスタント", "desc": "ドキュメントを要約しリスクを抽出。" },
-    "reports": { "title": "レポート", "desc": "生産性トレンドと燃え尽きリスク。" },
-    "history": { "title": "履歴", "desc": "作成したすべてを検索。" },
-    "chat": { "title": "AI チャット", "desc": "何でも質問。計画・作成・決定。" },
-    "settings": { "title": "設定", "desc": "ConnectSmart AI ワークスペースをカスタマイズ。" }
+    "dashboard": {
+      "title": "生産性ダッシュボード",
+      "desc": "あなたの生産性を一目で。"
+    },
+    "tasks": {
+      "title": "タスクプランナー",
+      "desc": "アイゼンハワー・マトリクスで優先順位付け。"
+    },
+    "meetings": {
+      "title": "ミーティング・インテリジェンス",
+      "desc": "要約、アクション、効率スコア。"
+    },
+    "email": {
+      "title": "メール生成",
+      "desc": "どんな相手にも洗練されたメールを。"
+    },
+    "research": {
+      "title": "リサーチ・アシスタント",
+      "desc": "ドキュメントを要約しリスクを抽出。"
+    },
+    "reports": {
+      "title": "レポート",
+      "desc": "生産性トレンドと燃え尽きリスク。"
+    },
+    "history": {
+      "title": "履歴",
+      "desc": "作成したすべてを検索。"
+    },
+    "chat": {
+      "title": "AI チャット",
+      "desc": "何でも質問。計画・作成・決定。"
+    },
+    "settings": {
+      "title": "設定",
+      "desc": "ConnectSmart AI ワークスペースをカスタマイズ。"
+    }
   },
-  "priority": { "critical": "緊急", "high": "高", "medium": "中", "low": "低" },
-  "status": { "todo": "未着手", "in_progress": "進行中", "done": "完了" },
-  "burnout": { "label": "燃え尽きリスク", "low": "低", "medium": "中", "high": "高" },
+  "priority": {
+    "critical": "緊急",
+    "high": "高",
+    "medium": "中",
+    "low": "低"
+  },
+  "status": {
+    "todo": "未着手",
+    "in_progress": "進行中",
+    "done": "完了"
+  },
+  "burnout": {
+    "label": "燃え尽きリスク",
+    "low": "低",
+    "medium": "中",
+    "high": "高"
+  },
   "chat": {
     "emptyTitle": "今日は何をお手伝いしましょう？",
     "emptyHint": "例：「3 件の顧客通話とローンチ締切を中心に月曜日を計画して。」",

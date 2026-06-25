@@ -1,5 +1,8 @@
 {
-  "app": { "name": "ConnectSmart AI", "tagline": "Travaillez mieux. Moins d'épuisement." },
+  "app": {
+    "name": "ConnectSmart AI",
+    "tagline": "Travaillez mieux. Moins d'épuisement."
+  },
   "nav": {
     "dashboard": "Tableau de bord",
     "chat": "Chat IA",
@@ -69,19 +72,60 @@
     "saved": "Préférences enregistrées"
   },
   "pages": {
-    "dashboard": { "title": "Tableau de bord", "desc": "Votre productivité en un coup d'œil." },
-    "tasks": { "title": "Planificateur de tâches", "desc": "Priorisez avec la matrice d'Eisenhower." },
-    "meetings": { "title": "Intelligence des réunions", "desc": "Résumés, actions et scores d'efficacité." },
-    "email": { "title": "Générateur d'e-mails", "desc": "Rédigez des e-mails soignés pour tout destinataire." },
-    "research": { "title": "Assistant de recherche", "desc": "Résumez des documents et faites ressortir les risques." },
-    "reports": { "title": "Rapports", "desc": "Tendances de productivité et risque d'épuisement." },
-    "history": { "title": "Historique", "desc": "Recherchez dans tout ce que vous avez créé." },
-    "chat": { "title": "Chat IA", "desc": "Demandez n'importe quoi. Planifier, rédiger, décider." },
-    "settings": { "title": "Paramètres", "desc": "Personnalisez votre espace ConnectSmart AI." }
+    "dashboard": {
+      "title": "Tableau de bord de productivité",
+      "desc": "Votre productivité en un coup d'œil."
+    },
+    "tasks": {
+      "title": "Planificateur de tâches",
+      "desc": "Priorisez avec la matrice d'Eisenhower."
+    },
+    "meetings": {
+      "title": "Intelligence des réunions",
+      "desc": "Résumés, actions et scores d'efficacité."
+    },
+    "email": {
+      "title": "Générateur d'e-mails",
+      "desc": "Rédigez des e-mails soignés pour tout destinataire."
+    },
+    "research": {
+      "title": "Assistant de recherche",
+      "desc": "Résumez des documents et faites ressortir les risques."
+    },
+    "reports": {
+      "title": "Rapports",
+      "desc": "Tendances de productivité et risque d'épuisement."
+    },
+    "history": {
+      "title": "Historique",
+      "desc": "Recherchez dans tout ce que vous avez créé."
+    },
+    "chat": {
+      "title": "Chat IA",
+      "desc": "Demandez n'importe quoi. Planifier, rédiger, décider."
+    },
+    "settings": {
+      "title": "Paramètres",
+      "desc": "Personnalisez votre espace ConnectSmart AI."
+    }
   },
-  "priority": { "critical": "Critique", "high": "Élevée", "medium": "Moyenne", "low": "Faible" },
-  "status": { "todo": "À faire", "in_progress": "En cours", "done": "Terminé" },
-  "burnout": { "label": "Risque d'épuisement", "low": "Faible", "medium": "Moyen", "high": "Élevé" },
+  "priority": {
+    "critical": "Critique",
+    "high": "Élevée",
+    "medium": "Moyenne",
+    "low": "Faible"
+  },
+  "status": {
+    "todo": "À faire",
+    "in_progress": "En cours",
+    "done": "Terminé"
+  },
+  "burnout": {
+    "label": "Risque d'épuisement",
+    "low": "Faible",
+    "medium": "Moyen",
+    "high": "Élevé"
+  },
   "chat": {
     "emptyTitle": "Comment puis-je vous aider aujourd'hui ?",
     "emptyHint": "Essayez : « Planifie mon lundi avec 3 appels clients et un lancement. »",
