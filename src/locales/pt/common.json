@@ -1,5 +1,8 @@
 {
-  "app": { "name": "ConnectSmart AI", "tagline": "Trabalhe melhor. Menos esgotamento." },
+  "app": {
+    "name": "ConnectSmart AI",
+    "tagline": "Trabalhe melhor. Menos esgotamento."
+  },
   "nav": {
     "dashboard": "Painel",
     "chat": "Chat IA",
@@ -69,19 +72,60 @@
     "saved": "Preferências salvas"
   },
   "pages": {
-    "dashboard": { "title": "Painel", "desc": "Sua produtividade em um relance." },
-    "tasks": { "title": "Planejador de tarefas", "desc": "Priorize com a matriz de Eisenhower." },
-    "meetings": { "title": "Inteligência de reuniões", "desc": "Resumos, ações e pontuações de eficiência." },
-    "email": { "title": "Gerador de e-mails", "desc": "Redija e-mails refinados para qualquer destinatário." },
-    "research": { "title": "Assistente de pesquisa", "desc": "Resuma documentos e destaque riscos." },
-    "reports": { "title": "Relatórios", "desc": "Tendências de produtividade e risco de esgotamento." },
-    "history": { "title": "Histórico", "desc": "Pesquise em tudo o que você criou." },
-    "chat": { "title": "Chat IA", "desc": "Pergunte qualquer coisa. Planeje, redija, decida." },
-    "settings": { "title": "Configurações", "desc": "Personalize seu espaço ConnectSmart AI." }
+    "dashboard": {
+      "title": "Painel de produtividade",
+      "desc": "Sua produtividade em um relance."
+    },
+    "tasks": {
+      "title": "Planejador de tarefas",
+      "desc": "Priorize com a matriz de Eisenhower."
+    },
+    "meetings": {
+      "title": "Inteligência de reuniões",
+      "desc": "Resumos, ações e pontuações de eficiência."
+    },
+    "email": {
+      "title": "Gerador de e-mails",
+      "desc": "Redija e-mails refinados para qualquer destinatário."
+    },
+    "research": {
+      "title": "Assistente de pesquisa",
+      "desc": "Resuma documentos e destaque riscos."
+    },
+    "reports": {
+      "title": "Relatórios",
+      "desc": "Tendências de produtividade e risco de esgotamento."
+    },
+    "history": {
+      "title": "Histórico",
+      "desc": "Pesquise em tudo o que você criou."
+    },
+    "chat": {
+      "title": "Chat IA",
+      "desc": "Pergunte qualquer coisa. Planeje, redija, decida."
+    },
+    "settings": {
+      "title": "Configurações",
+      "desc": "Personalize seu espaço ConnectSmart AI."
+    }
   },
-  "priority": { "critical": "Crítica", "high": "Alta", "medium": "Média", "low": "Baixa" },
-  "status": { "todo": "A fazer", "in_progress": "Em andamento", "done": "Concluído" },
-  "burnout": { "label": "Risco de esgotamento", "low": "Baixo", "medium": "Médio", "high": "Alto" },
+  "priority": {
+    "critical": "Crítica",
+    "high": "Alta",
+    "medium": "Média",
+    "low": "Baixa"
+  },
+  "status": {
+    "todo": "A fazer",
+    "in_progress": "Em andamento",
+    "done": "Concluído"
+  },
+  "burnout": {
+    "label": "Risco de esgotamento",
+    "low": "Baixo",
+    "medium": "Médio",
+    "high": "Alto"
+  },
   "chat": {
     "emptyTitle": "Como posso ajudar hoje?",
     "emptyHint": "Tente: \"Planeje minha segunda com 3 chamadas e um lançamento.\"",
