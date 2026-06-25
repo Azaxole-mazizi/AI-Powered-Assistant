@@ -14,7 +14,7 @@ import { Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from "rec
 import { toast } from "sonner";
 
 export const Route = createFileRoute("/_authenticated/dashboard")({
-  head: () => ({ meta: [{ title: "Dashboard — ConnectSmart AI" }] }),
+  head: () => ({ meta: [{ title: "Dashboard — ConnectSmart AI" }, { name: "description", content: "Track focus blocks, burnout risk, weekly trends and AI productivity insights in your ConnectSmart workspace dashboard." }, { property: "og:title", content: "Dashboard — ConnectSmart AI" }, { property: "og:description", content: "Track focus blocks, burnout risk, weekly trends and AI productivity insights in your ConnectSmart workspace dashboard." }] }),
   component: Dashboard,
 });
 

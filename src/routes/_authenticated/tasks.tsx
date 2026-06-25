@@ -18,7 +18,7 @@ import { toast } from "sonner";
 import { AIDisclaimer } from "@/components/ai-disclaimer";
 
 export const Route = createFileRoute("/_authenticated/tasks")({
-  head: () => ({ meta: [{ title: "Task Planner — ConnectSmart AI" }] }),
+  head: () => ({ meta: [{ title: "Task Planner — ConnectSmart AI" }, { name: "description", content: "Plan and prioritise work with an Eisenhower matrix task planner and AI breakdown of goals into actionable steps." }, { property: "og:title", content: "Task Planner — ConnectSmart AI" }, { property: "og:description", content: "Plan and prioritise work with an Eisenhower matrix task planner and AI breakdown of goals into actionable steps." }] }),
   component: TasksPage,
 });
 

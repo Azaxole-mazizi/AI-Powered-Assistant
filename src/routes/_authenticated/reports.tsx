@@ -9,7 +9,7 @@ import { Area, AreaChart, Bar, BarChart, ResponsiveContainer, Tooltip, XAxis, YA
 import { AIDisclaimer } from "@/components/ai-disclaimer";
 
 export const Route = createFileRoute("/_authenticated/reports")({
-  head: () => ({ meta: [{ title: "Productivity Reports — ConnectSmart AI" }] }),
+  head: () => ({ meta: [{ title: "Productivity Reports — ConnectSmart AI" }, { name: "description", content: "Review productivity analytics, hours saved, weekly trends and AI-generated reports on your work performance." }, { property: "og:title", content: "Productivity Reports — ConnectSmart AI" }, { property: "og:description", content: "Review productivity analytics, hours saved, weekly trends and AI-generated reports on your work performance." }] }),
   component: ReportsPage,
 });
 

@@ -16,7 +16,7 @@ import { toast } from "sonner";
 import { AIDisclaimer } from "@/components/ai-disclaimer";
 
 export const Route = createFileRoute("/_authenticated/research")({
-  head: () => ({ meta: [{ title: "Research Assistant — ConnectSmart AI" }] }),
+  head: () => ({ meta: [{ title: "Research Assistant — ConnectSmart AI" }, { name: "description", content: "Summarise documents, extract key insights and surface risks with the ConnectSmart AI research assistant." }, { property: "og:title", content: "Research Assistant — ConnectSmart AI" }, { property: "og:description", content: "Summarise documents, extract key insights and surface risks with the ConnectSmart AI research assistant." }] }),
   component: ResearchPage,
 });
 

@@ -16,7 +16,7 @@ import { useTranslation } from "react-i18next";
 import { applyLanguage, SUPPORTED_LANGUAGES } from "@/lib/i18n";
 
 export const Route = createFileRoute("/_authenticated/settings")({
-  head: () => ({ meta: [{ title: "Settings — ConnectSmart AI" }] }),
+  head: () => ({ meta: [{ title: "Settings — ConnectSmart AI" }, { name: "description", content: "Manage your ConnectSmart profile, language, theme, working hours, notifications and productivity goal preferences." }, { property: "og:title", content: "Settings — ConnectSmart AI" }, { property: "og:description", content: "Manage your ConnectSmart profile, language, theme, working hours, notifications and productivity goal preferences." }] }),
   component: SettingsPage,
 });
 
