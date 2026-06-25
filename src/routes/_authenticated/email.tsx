@@ -15,7 +15,7 @@ import { toast } from "sonner";
 import { AIDisclaimer } from "@/components/ai-disclaimer";
 
 export const Route = createFileRoute("/_authenticated/email")({
-  head: () => ({ meta: [{ title: "Email Generator — ConnectSmart AI" }] }),
+  head: () => ({ meta: [{ title: "Email Generator — ConnectSmart AI" }, { name: "description", content: "Draft professional emails in any tone — client, team, manager — with AI-optimised structure and language for faster replies." }, { property: "og:title", content: "Email Generator — ConnectSmart AI" }, { property: "og:description", content: "Draft professional emails in any tone — client, team, manager — with AI-optimised structure and language for faster replies." }] }),
   component: EmailPage,
 });
 

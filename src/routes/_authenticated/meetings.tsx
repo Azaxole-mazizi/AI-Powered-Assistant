@@ -16,7 +16,7 @@ import { toast } from "sonner";
 import { AIDisclaimer } from "@/components/ai-disclaimer";
 
 export const Route = createFileRoute("/_authenticated/meetings")({
-  head: () => ({ meta: [{ title: "Meeting Intelligence — ConnectSmart AI" }] }),
+  head: () => ({ meta: [{ title: "Meeting Intelligence — ConnectSmart AI" }, { name: "description", content: "Turn meeting transcripts into summaries, action items, decisions and efficiency scores with AI meeting intelligence." }, { property: "og:title", content: "Meeting Intelligence — ConnectSmart AI" }, { property: "og:description", content: "Turn meeting transcripts into summaries, action items, decisions and efficiency scores with AI meeting intelligence." }] }),
   component: MeetingsPage,
 });
 

@@ -7,7 +7,7 @@ import { Plus, MessageSquare, Trash2 } from "lucide-react";
 import { toast } from "sonner";
 
 export const Route = createFileRoute("/_authenticated/chat")({
-  head: () => ({ meta: [{ title: "AI Chat — ConnectSmart AI" }] }),
+  head: () => ({ meta: [{ title: "AI Chat — ConnectSmart AI" }, { name: "description", content: "Chat with ConnectSmart AI across multiple threads to plan tasks, draft emails, analyse meetings and explore research." }, { property: "og:title", content: "AI Chat — ConnectSmart AI" }, { property: "og:description", content: "Chat with ConnectSmart AI across multiple threads to plan tasks, draft emails, analyse meetings and explore research." }] }),
   component: ChatLayout,
 });
 

@@ -11,7 +11,7 @@ import { MessageSquare, Mail, CalendarClock, FileSearch } from "lucide-react";
 import { useState } from "react";
 
 export const Route = createFileRoute("/_authenticated/history")({
-  head: () => ({ meta: [{ title: "History — ConnectSmart AI" }] }),
+  head: () => ({ meta: [{ title: "History — ConnectSmart AI" }, { name: "description", content: "Browse your past AI chats, drafts, meeting analyses and research items in one searchable ConnectSmart history view." }, { property: "og:title", content: "History — ConnectSmart AI" }, { property: "og:description", content: "Browse your past AI chats, drafts, meeting analyses and research items in one searchable ConnectSmart history view." }] }),
   component: HistoryPage,
 });
 
