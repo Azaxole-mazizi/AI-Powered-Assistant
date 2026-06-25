@@ -59,8 +59,8 @@ function Dashboard() {
   return (
     <div className="mx-auto max-w-7xl p-6 md:p-10">
       <PageHeader
-        title="Welcome back"
-        description="Your AI-powered productivity overview."
+        title={t("pages.dashboard.title")}
+        description={t("pages.dashboard.desc")}
         action={
           <Button onClick={() => generate.mutate()} disabled={generate.isPending} className="bg-gradient-primary text-primary-foreground shadow-elegant">
             <Sparkles className="mr-2 h-4 w-4" /> {generate.isPending ? "Analyzing…" : "Generate insights"}
