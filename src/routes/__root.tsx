@@ -90,6 +90,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { title: "ConnectSmart AI" },
+      { property: "og:title", content: "ConnectSmart AI" },
+      { name: "twitter:title", content: "ConnectSmart AI" },
+      { name: "description", content: "WorkFlow AI is an AI-powered workplace assistant that boosts productivity and automates tasks." },
+      { property: "og:description", content: "WorkFlow AI is an AI-powered workplace assistant that boosts productivity and automates tasks." },
+      { name: "twitter:description", content: "WorkFlow AI is an AI-powered workplace assistant that boosts productivity and automates tasks." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/eb77a31d-5de6-40ec-8fd3-f96c2f5ee5c1/id-preview-111880ff--f64bb8ae-69bc-4da2-b108-c0bd90d93913.lovable.app-1782373340063.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/eb77a31d-5de6-40ec-8fd3-f96c2f5ee5c1/id-preview-111880ff--f64bb8ae-69bc-4da2-b108-c0bd90d93913.lovable.app-1782373340063.png" },
     ],
     links: [
       {
